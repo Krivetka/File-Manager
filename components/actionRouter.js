@@ -3,8 +3,10 @@ import upAction from "../actions/upAction.js";
 import lsAction from "../actions/lsAction.js";
 import splitWords from "./splitWords.js";
 import cdAction from "../actions/cdAction.js";
+import catAction from "../actions/catAction.js";
 import addAction from "../actions/addAction.js";
 import rnAction from "../actions/rnAction.js";
+
 
 const mapAction = {
   up: {
@@ -19,6 +21,10 @@ const mapAction = {
     args: 0,
     fn: lsAction,
   },
+    cat: {
+        args: 1,
+        fn: catAction,
+    },
   add: {
     args: 1,
     fn: addAction,
@@ -27,38 +33,6 @@ const mapAction = {
     args: 2,
     fn: rnAction,
   },
-  //     'cat': {
-  //         args: 1,
-  //         fn: catAction,
-  //     },
-  //     'cp': {
-  //         args: 2,
-  //         fn: cpAction,
-  //     },
-  //     'rm': {
-  //         args: 1,
-  //         fn: rmAction,
-  //     },
-  //     'mv': {
-  //         args: 2,
-  //         fn: mvAction,
-  //     },
-  //     'os': {
-  //         args: 1,
-  //         fn: osAction,
-  //     },
-  //     'hash': {
-  //         args: 1,
-  //         fn: hashAction,
-  //     },
-  //     'compress': {
-  //         args: 2,
-  //         fn: compressAction,
-  //     },
-  //     'decompress': {
-  //         args: 2,
-  //         fn: decompressAction,
-  //     }
 };
 
 const actionRouter = async (str) => {
