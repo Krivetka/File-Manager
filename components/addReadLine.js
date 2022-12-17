@@ -1,5 +1,6 @@
 import readline from "node:readline";
 import getUserName from "./getUserName.js";
+import actionRouter from "./actionRouter.js";
 
 const addReadLine = () => {
   const rl = readline.createInterface({
@@ -12,6 +13,7 @@ const addReadLine = () => {
       if (input.trim().toLowerCase() === ".exit") {
         rl.close();
       }
+      actionRouter(input);
 
     })
     .on("SIGINT", () => rl.close())

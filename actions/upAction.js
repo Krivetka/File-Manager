@@ -1,5 +1,6 @@
 import { resolve } from "node:path";
 
-export const upAction = () => {
+const upAction = () => {
   process.chdir(resolve(".."));
 };
+export default upAction;
