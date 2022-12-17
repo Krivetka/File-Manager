@@ -1,0 +1,23 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "console app",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krivetka/File-Manager.git"
+  },
+  "keywords": [
+    "nodeJS"
+  ],
+  "author": "Ivan Kuliashov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Krivetka/File-Manager/issues"
+  },
+  "homepage": "https://github.com/Krivetka/File-Manager#readme"
+}
