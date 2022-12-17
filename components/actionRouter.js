@@ -3,10 +3,7 @@ import upAction from "../actions/upAction.js";
 import lsAction from "../actions/lsAction.js";
 import splitWords from "./splitWords.js";
 import cdAction from "../actions/cdAction.js";
-
-// const successMessage = (string) => process.stdout.write(`\x1b[92m${string} \x1b[0m`);
-const errorMessage = (string) =>
-  process.stdout.write(`\x1b[91m${string} \x1b[0m`);
+import addAction from "../actions/addAction.js";
 
 const mapAction = {
   up: {
@@ -21,10 +18,10 @@ const mapAction = {
     args: 0,
     fn: lsAction,
   },
-  //     'add': {
-  //         args: 1,
-  //         fn: addAction,
-  //     },
+  add: {
+    args: 1,
+    fn: addAction,
+  },
   //     'rn': {
   //         args: 2,
   //         fn: rnAction,
@@ -65,14 +62,14 @@ const mapAction = {
 
 const actionRouter = async (str) => {
   if (!str) {
-    errorMessage("Input invalid");
+    process.stdout.write("Input invalid\n");
     return;
   }
   const [action, ...rest] = splitWords(str);
 
   const isExistCommand = Object.keys(mapAction).includes(action);
   if (!isExistCommand) {
-    errorMessage("Input invalid");
+    process.stdout.write("Input invalid\n");
     return;
   }
   const isRightCountArgs = rest.length >= mapAction[action].args;
@@ -81,10 +78,10 @@ const actionRouter = async (str) => {
       await mapAction[action].fn(rest);
       printCurrentDir();
     } catch (error) {
-      errorMessage("Operation failed");
+      process.stdout.write("Operation failed\n");
     }
   } else {
-    errorMessage("Input invalid");
+    process.stdout.write("Input invalid\n");
   }
 };
 
