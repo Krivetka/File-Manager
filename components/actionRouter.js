@@ -4,6 +4,7 @@ import lsAction from "../actions/lsAction.js";
 import splitWords from "./splitWords.js";
 import cdAction from "../actions/cdAction.js";
 import addAction from "../actions/addAction.js";
+import rnAction from "../actions/rnAction.js";
 
 const mapAction = {
   up: {
@@ -22,10 +23,10 @@ const mapAction = {
     args: 1,
     fn: addAction,
   },
-  //     'rn': {
-  //         args: 2,
-  //         fn: rnAction,
-  //     },
+  rn: {
+    args: 2,
+    fn: rnAction,
+  },
   //     'cat': {
   //         args: 1,
   //         fn: catAction,
