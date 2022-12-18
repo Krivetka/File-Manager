@@ -6,7 +6,13 @@ import cdAction from "../actions/cdAction.js";
 import catAction from "../actions/catAction.js";
 import addAction from "../actions/addAction.js";
 import rnAction from "../actions/rnAction.js";
-
+import cpAction from "../actions/cpAction.js";
+import rmAction from "../actions/rmAction.js";
+import mvAction from "../actions/mvAction.js";
+import hashAction from "../actions/hashAction.js";
+import compressAction from "../actions/compressAction.js";
+import decompressAction from "../actions/decompressAction.js";
+import osAction from "../actions/osAction.js";
 
 const mapAction = {
   up: {
@@ -21,10 +27,10 @@ const mapAction = {
     args: 0,
     fn: lsAction,
   },
-    cat: {
-        args: 1,
-        fn: catAction,
-    },
+  cat: {
+    args: 1,
+    fn: catAction,
+  },
   add: {
     args: 1,
     fn: addAction,
@@ -32,6 +38,34 @@ const mapAction = {
   rn: {
     args: 2,
     fn: rnAction,
+  },
+  cp: {
+    args: 2,
+    fn: cpAction,
+  },
+  rm: {
+    args: 1,
+    fn: rmAction,
+  },
+  mv: {
+    args: 2,
+    fn: mvAction,
+  },
+  hash: {
+    args: 1,
+    fn: hashAction,
+  },
+  compress: {
+    args: 2,
+    fn: compressAction,
+  },
+  decompress: {
+    args: 2,
+    fn: decompressAction,
+  },
+  os: {
+    args: 1,
+    fn: osAction,
   },
 };
 
