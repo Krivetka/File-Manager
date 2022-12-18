@@ -7,7 +7,7 @@ const catAction = async ([file]) => {
   const readableStream = createReadStream(pathFile);
 
   readableStream.on("error", () => {
-    process.stdout.write("Something went wrong");
+    process.stdout.write("Something went wrong\n");
     printCurrentDir();
   });
   readableStream.on("end", () => {

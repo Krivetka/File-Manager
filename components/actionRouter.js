@@ -9,6 +9,7 @@ import rnAction from "../actions/rnAction.js";
 import cpAction from "../actions/cpAction.js";
 import rmAction from "../actions/rmAction.js";
 import mvAction from "../actions/mvAction.js";
+import hashAction from "../actions/hashAction.js";
 
 const mapAction = {
   up: {
@@ -46,6 +47,10 @@ const mapAction = {
   mv: {
     args: 2,
     fn: mvAction,
+  },
+  hash: {
+    args: 1,
+    fn: hashAction,
   },
 };
 
