@@ -12,6 +12,7 @@ import mvAction from "../actions/mvAction.js";
 import hashAction from "../actions/hashAction.js";
 import compressAction from "../actions/compressAction.js";
 import decompressAction from "../actions/decompressAction.js";
+import osAction from "../actions/osAction.js";
 
 const mapAction = {
   up: {
@@ -58,9 +59,13 @@ const mapAction = {
     args: 2,
     fn: compressAction,
   },
-  decompress : {
+  decompress: {
     args: 2,
     fn: decompressAction,
+  },
+  os: {
+    args: 1,
+    fn: osAction,
   },
 };
 
