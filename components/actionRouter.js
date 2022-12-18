@@ -6,6 +6,7 @@ import cdAction from "../actions/cdAction.js";
 import catAction from "../actions/catAction.js";
 import addAction from "../actions/addAction.js";
 import rnAction from "../actions/rnAction.js";
+import cpAction from "../actions/cpAction.js";
 
 
 const mapAction = {
@@ -32,6 +33,10 @@ const mapAction = {
   rn: {
     args: 2,
     fn: rnAction,
+  },
+  cp: {
+    args: 2,
+    fn: cpAction,
   },
 };
 
