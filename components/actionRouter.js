@@ -7,6 +7,7 @@ import catAction from "../actions/catAction.js";
 import addAction from "../actions/addAction.js";
 import rnAction from "../actions/rnAction.js";
 import cpAction from "../actions/cpAction.js";
+import rmAction from "../actions/rmAction.js";
 
 
 const mapAction = {
@@ -38,6 +39,10 @@ const mapAction = {
     args: 2,
     fn: cpAction,
   },
+  rm: {
+    args: 1,
+    fn: rmAction,
+  }
 };
 
 const actionRouter = async (str) => {

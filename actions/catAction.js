@@ -1,11 +1,20 @@
-import { createReadStream } from 'node:fs';
-import { resolve } from 'node:path';
-import { pipeline } from 'stream/promises';
+import { createReadStream } from "node:fs";
+import { resolve } from "node:path";
+import printCurrentDir from "../components/printCurrentDir.js";
 
 const catAction = async ([file]) => {
   const pathFile = resolve(file);
   const readableStream = createReadStream(pathFile);
-  await pipeline(readableStream, process.stdout);
+
+  readableStream.on("error", () => {
+    process.stdout.write("Something went wrong");
+    printCurrentDir();
+  });
+  readableStream.on("end", () => {
+    process.stdout.write("\n");
+    printCurrentDir();
+  });
+  readableStream.on("data", (data) => process.stdout.write(data));
 };
 
 export default catAction;
