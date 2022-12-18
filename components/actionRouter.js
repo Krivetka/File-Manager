@@ -10,6 +10,7 @@ import cpAction from "../actions/cpAction.js";
 import rmAction from "../actions/rmAction.js";
 import mvAction from "../actions/mvAction.js";
 import hashAction from "../actions/hashAction.js";
+import compressAction from "../actions/compressAction.js";
 
 const mapAction = {
   up: {
@@ -51,6 +52,10 @@ const mapAction = {
   hash: {
     args: 1,
     fn: hashAction,
+  },
+  compress: {
+    args: 2,
+    fn: compressAction,
   },
 };
 
